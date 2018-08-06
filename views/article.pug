@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+    .card(style='width: 18rem;')
+        img.card-img-top(src=image, alt=image)
+        .card-body
+            h5.card-title= article.title
+            p.card-text= article.body
+            p.card-text= author
+            div
+                if user
+                    if user.id ==article.author
+                        a.btn.btn-primary.btn-sm(href="/article/edit/"+article.id) Edit
+                        a.btn.btn-danger.btn-sm.delete-article(href="#", data-id=article._id) Delete
+

@@ -1,0 +1,32 @@
+mongod --directoryperdb --dbpath c:\mongodb\data\db --logpath c:\mongodb\log\mongo.log --logappend --rest --install
+
+mongod --remove
+mongod --repair
+
+mongod.exe --logpath C:\mongodb\log\mongodb.log --logappend --dbpath C:\mongodb\data --directoryperdb --serviceName MongoDB --remove
+mongod --logpath "C:\mongodb\log\mongodb.log" --logappend --dbpath "C:\mongodb\data" --directoryperdb --serviceName "MongoDB" --serviceDisplayName "MongoDB" --install
+
+net start MongoDB
+net stop MongoDB
+1. show dbs
+2. use nodekb
+3. db.createCollection('articles');
+4. show collections
+5. db.articles.insert({title:"Article 1",author:"Autor", body: "This is article One" })
+6. db.articles.find();
+7. db.articles.find().pretty();
+8. db.users.remove({_id:ObjectId("5b602b1cf0467817e05108a9")});
+
+
+npm shrinkwrap
+npm i pm2 // running in background
+
+// PORT 80
+sudo apt-get install libcap2-bin
+sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+https://serverfault.com/questions/665709/allowing-node-js-applications-to-run-on-port-80
+
+// Validators
+https://github.com/chriso/validator.js#sanitizers
+https://express-validator.github.io/docs/sanitization.html
+

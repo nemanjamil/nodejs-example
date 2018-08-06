@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= title
+    form(action="/user/login", method="post")
+      
+        div.form-group
+            label(for='username') UserName:
+            input#username.form-control(type='text', placeholder='UserName' name='username')
+       
+        div.form-group
+            label(for='password') Password:
+            input#password.form-control(type='password', placeholder='Password' name='password')
+        
+            
+        input.btn.btn-primary(type="submit", value="Submit")
